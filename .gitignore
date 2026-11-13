@@ -1,0 +1,9 @@
+# The datamine workspace is NEVER shipped in this repo; only the subset written into
+# data.js + assets/ by tools/build_data.py is tracked.
+../_uk_extract/
+_uk_extract/
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/

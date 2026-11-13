@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#14110f" />
+  <title>Underkeep Codex</title>
+  <link rel="stylesheet" href="styles.css?v=7d2d6821" />
+</head>
+<body>
+  <header class="top">
+    <h1>Underkeep Codex</h1>
+    <nav id="tabs" class="tabs" role="tablist"></nav>
+  </header>
+  <main id="main">
+    <div id="controls" class="controls"></div>
+    <div id="list" class="list"></div>
+  </main>
+  <div id="overlay" class="overlay hidden" aria-hidden="true">
+    <div class="sheet" role="dialog" aria-modal="true">
+      <div class="sheet-head"><button id="back" class="back" type="button">‹ Back</button></div>
+      <div id="detail" class="detail"></div>
+    </div>
+  </div>
+  <script src="data.js?v=fdfada73"></script>
+  <script src="app.js?v=aaebaeb9" defer></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol === "https:") {
+      addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+      let reloading = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (reloading) return;
+        reloading = true;
+        location.reload();
+      });
+      navigator.serviceWorker.ready.then((reg) => {
+        (reg.active || navigator.serviceWorker.controller)?.postMessage({ type: "precache" });
+      });
+    }
+  </script>
+  <!-- Cloudflare Web Analytics: INERT until public release (rule A-analytics).
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b5abb0125b524ee8a96efbe9899114a4"}'></script>
+  -->
+</body>
+</html>
