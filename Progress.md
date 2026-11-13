@@ -8,5 +8,5 @@
 
 ## Next
 - Spell / elemental damage pipeline and the enemy-attacks-hero side (melee / ranged protection).
-- Race and class base stats (live in the exe, not the data files).
-- Shops, alchemy recipes, encounters / where enemies appear.
+- Encounters / where enemies appear.
+- Resting-table index stat; base stats table on Mechanics.
