@@ -27,7 +27,7 @@
 
   Rename ACRONYM in the cache names below. BUILD is stamped by tools/build_data.py.
 */
-const BUILD = "2bcac0ba";
+const BUILD = "39aa6815";
 const SHELL = `uk-shell-${BUILD}`;
 const ASSETS = "uk-assets"; // stable across deploys; versioned internally by the list
 const KEEP = new Set([SHELL, ASSETS]);
